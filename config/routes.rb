@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   end
 
   root to: 'home#index'
+  get '/profile/:id' => 'profile#show'
 end
