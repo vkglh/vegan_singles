@@ -1,17 +1,126 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Vegan Singles</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+
+<!-- Meta -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- CSRF -->
+<%= csrf_meta_tags %>
+
+<!-- Title -->
+<title>Vegan Singles - Vegan Dating, Simplified.</title>
+
+<!-- Favicons -->
+<link rel="shortcut icon" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/favicon_60x60.png">
+<link rel="apple-touch-icon" sizes="76x76" href="images/favicon_76x76.png">
+<link rel="apple-touch-icon" sizes="120x120" href="images/favicon_120x120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="images/favicon_152x152.png">
+
+<!-- Google Web Fonts -->
+<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300,100,700' rel='stylesheet' type='text/css'>
+
+<!-- CSS Styles -->
+<link rel="stylesheet" href="assets/css/styles.css" />
+
+<!-- CSS Animations -->
+<link rel="stylesheet" href="assets/css/animate.css" />
+
+<!-- CSS Template -->
+<link rel="stylesheet" href="assets/css/theme.css" />
+
+<!-- CSS Roboto Font -->
+<link rel="stylesheet" href="assets/css/font-roboto.css" />
+
 </head>
-<body>
 
-<%= yield %>
+<body class="side-navigation">
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<!-- Loader -->
+<div id="page-loader"></div>
+<!-- Loader / End -->
 
+<!-- Header -->
+<header id="header" class="header-vertical bg-black dark">
+
+    <!-- Logo -->
+    <a href="#" class="logo padding-v-60 padding-h-20 text-right hidden-sm hidden-xs">
+
+        <h2>Vegan Singles</h2>
+        <img src='assets/img/logo.png'>
+        <br>
+        <br>
+        <p><%= number_with_delimiter(User.count)%> registered users</p>
+    </a>
+    
+    <!-- Navigation -->
+    <nav id="main-menu">
+        <ul class="nav nav-main-vertical">
+            <% if current_user %>
+
+            <% else %>
+                <%= render 'layouts/header_unauthenticated' %>
+            <% end %>
+        </ul>
+    </nav>
+    
+    <!-- Social Icons -->
+    <div class="bottom-bar padding-20 text-right">
+        <ul class="social-icons pull-right margin-b-0 hidden-xs">
+            <li><a href="#" class="icon icon-xs"><i class="fa fa-facebook"></i></a></li>
+        </ul>
+    </div>
+
+</header>
+<!-- Header / End -->
+
+<!-- Page Wrapper -->
+<div id="page-wrapper" data-scroll-easing="easeOutQuad">
+
+    <%= yield %>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-black padding-v-40 dark text-center">
+        <div class="section-content copyright margin-b-20">
+            Copyright <strong>Vegan Singles</strong> 2015©. Made with love from <a href="#"><strong>Los Angeles, CA</strong></a>
+        </div>
+        <span data-target="local-scroll"><a href="#section01" class="back-to-top"><i class="fa fa-chevron-up"></i></a></span>
+    </footer>
+    <!-- Footer / End -->
+
+</div>
+<!-- Page Wrapper / End -->
+
+<!-- JS Libraries -->
+<script src="assets/js/jquery-1.11.1.min.js"></script>
+
+<!-- JS Plugins -->
+<script src="assets/js/plugins.js"></script>
+
+<!-- JS Core -->
+<script src="assets/js/core.js"></script>
+
+<!-- Google Map API -->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->
+<!--
+<script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-XXXXX-X']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+-->
 
 </body>
+
 </html>

@@ -1,7 +1,0 @@
-development:
-  adapter: postgresql
-  encoding: unicode
-  database: vegan_singles
-  pool: 5
-  username: postgres
-  password: hentai
