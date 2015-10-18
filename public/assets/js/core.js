@@ -279,15 +279,15 @@ var Kwadrat = {
                 scrollwheel: false
                 };
 
-                window.map = new google.maps.Map(document.getElementById('google-map'), myOptions);
+                // window.map = new google.maps.Map(document.getElementById('google-map'), myOptions);
 
                 var image = 'assets/img/my-location.png';
                 var myLatLng = new google.maps.LatLng(yourLatitude,yourLongitude);
-                var myLocation = new google.maps.Marker({
+               /*var myLocation = new google.maps.Marker({
                     position: myLatLng,
                     map: map,
                     icon: image
-                });
+                });*/
             
             }
             

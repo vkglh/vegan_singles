@@ -1,29 +1,44 @@
-<h2>Sign up</h2>
+<section class="section fullheight bg-blue-navy dark padding-v-100" data-header-change="true">
+        
+        <div class="section-content v-center">
+            <div class="border-bottom margin-b-80">
+                <div class="container container-wide">
+                    <h1 class="text-center"><i class="fa fa-keyboard-o" style='margin-right: 10px;'> </i></a> Register</h1>
+                </div>
+            </div>
+            
+            <div class="container">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+                    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                    <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+                      <div class="form-group">
+                        <%= f.label :email %><br />
+                        <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+                      </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+                      <div class="form-group">
+                        <%= f.label :password %>
+                        <% if @validatable %>
+                        <em>(<%= @minimum_password_length %> characters minimum)</em>
+                        <% end %><br />
+                        <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+                      </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+                      <div class="form-group">
+                        <%= f.label :password_confirmation %><br />
+                        <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+                      </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+                      <center>
+                        <%= f.submit "Register", class: 'btn btn-green btn-filled btn-lg margin-t-20'%>
+                      </center>
 
-<%= render "devise/shared/links" %>
+                    <% end %>
+
+            </div>
+        </div>
+
+</section>
+
+
