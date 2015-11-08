@@ -10,8 +10,12 @@ Rails.application.routes.draw do
   end
 
   root to: 'home#index'
+
+  get '/banned' => 'banned#index'
+
   get '/tos' => 'home#tos'
 
+  get '/profile/edit' => 'profile#edit'
   get '/profile/:id' => 'profile#show'
 
 

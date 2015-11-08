@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Authentication
 gem 'devise'
 
+gem 'haversine'
+
 gem "tzinfo-data"
 
 # Use ActiveModel has_secure_password
