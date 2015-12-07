@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 
   def gender_check
     if self.gender
-       errors.add(:gender, '- Your gender is not valid') if (self.gender != 'Male') && (self.gender != 'Female') && (self.gender != 'Bigender') && (self.gender != 'Agender')
+       errors.add(:gender, '- Your gender is not valid') if (self.gender != 'Male') && (self.gender != 'Female') && (self.gender != 'Genderfluid') && (self.gender != 'Non-binary')
     end
   end
 

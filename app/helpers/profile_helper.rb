@@ -47,9 +47,9 @@ module ProfileHelper
                 icon = 'fa fa-mars'
             elsif @user.gender == 'Female'
                 icon = 'fa fa-venus'
-            elsif @user.gender == 'Bigender'
+            elsif @user.gender == 'Genderfluid'
                 icon = 'fa fa-transgender'
-            elsif @user.gender == 'Agender'
+            elsif @user.gender == 'Non-binary'
                 icon = 'fa fa-genderless'
             else
                 ''
@@ -70,7 +70,7 @@ module ProfileHelper
 
     def show_looking_for
         genders = []
-         if (@user.looking_for_male == false || @user.looking_for_male == nil ) && (@user.looking_for_female == false || @user.looking_for_female == nil ) && (@user.looking_for_bigender == false || @user.looking_for_bigender == nil ) && (@user.looking_for_agender == false || @user.looking_for_agender == nil )
+         if (@user.looking_for_male == false || @user.looking_for_male == nil ) && (@user.looking_for_female == false || @user.looking_for_female == nil ) && (@user.looking_for_genderfluid == false || @user.looking_for_genderfluid == nil ) && (@user.looking_for_nonbinary == false || @user.looking_for_nonbinary == nil )
             '?'
         else
             if @user.looking_for_male == true
@@ -79,11 +79,11 @@ module ProfileHelper
             if @user.looking_for_female == true
                 genders.push 'Female'
             end
-            if @user.looking_for_bigender == true
-                genders.push 'Bigender'
+            if @user.looking_for_genderfluid == true
+                genders.push 'Genderfluid'
             end
-            if @user.looking_for_bigender == true
-                genders.push 'Agender'
+            if @user.looking_for_nonbinary == true
+                genders.push 'Non-binary'
             end
             genders.join(", ")
         end

@@ -6,5 +6,5 @@ class AddFieldsToUsers < ActiveRecord::Migration
         add_column :users, :facebook, :string
         add_column :users, :instagram, :string
         add_column :users, :skype, :string
-  end   
+    end   
 end
