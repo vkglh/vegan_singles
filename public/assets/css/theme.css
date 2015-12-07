@@ -1082,6 +1082,8 @@ Table of Contents:
 	.btn-red, .btn-danger { border-color: #ca4441; }
 	.btn-red.btn-filled, .btn-red:before, .btn-red:after, .btn-danger.btn-filled, .btn-danger:before, .btn-danger:after { background-color: #ca4441; }
 
+	.btn-mint-green { border-color: #8ACEB6; }
+	.btn-mint-green.btn-filled, .btn-mint-green:before, .btn-mint-green:after { background-color: #8ACEB6; }
 	.btn-red-dark { border-color: #4b1615; }
 	.btn-red-dark.btn-filled, .btn-red-dark:before, .btn-red-dark:after { background-color: #4b1615; }
 	.btn-red-navy { border-color: #723e3d; }

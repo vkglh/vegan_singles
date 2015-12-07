@@ -7,6 +7,22 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  validates_length_of :bio, maximum: 5000
+  validate :dob_check
+  validate :gender_check
+
+  def gender_check
+    if self.gender
+       errors.add(:gender, '- Your gender is not valid') if (self.gender != 'Male') && (self.gender != 'Female') && (self.gender != 'Bigender') && (self.gender != 'Agender')
+    end
+  end
+
+  def dob_check
+    if self.date_of_birth
+      errors.add(:birthdate, '- Your age must be over 18.') if self.date_of_birth > 18.years.ago.to_date
+    end
+  end
+
     def age
         now = Time.now.utc.to_date
         now.year - date_of_birth.year - ((now.month > date_of_birth.month || (now.month == date_of_birth.month && now.day >= date_of_birth.day)) ? 0 : 1)
@@ -34,6 +50,8 @@ class User < ActiveRecord::Base
     def distance_to(user)
         city_1 = City.where(name: city)[0]
         city_2 = City.where(name: user.city)[0]
+        if (city_1.is_a? Numeric) || (city_2.is_a? Numeric)
+        end
         Haversine.distance(city_1.lat, city_1.lng, city_2.lat, city_2.lng)
     end
 

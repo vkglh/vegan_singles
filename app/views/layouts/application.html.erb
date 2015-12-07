@@ -36,6 +36,9 @@
 <!-- CSS Oxygen Font -->
 <link rel="stylesheet" href="/assets/css/font-oxygen.css" />
 
+<!-- CSS Awesomplete -->
+<link rel="stylesheet" href="/assets/css/awesomplete.css" />
+
 </head>
 
 <body class="side-navigation">
@@ -48,12 +51,12 @@
 <header id="header" class="header-vertical bg-black dark">
 
     <!-- Logo -->
-    <a href="#" class="logo padding-v-60 padding-h-20 text-right hidden-sm hidden-xs">
+    <a href="#" class="logo padding-v-60 padding-h-20 text-right hidden-sm hidden-xs" style="text-decoration: none">
 
-        <h2>Vegan Singles</h2>
-        <img src='/assets/img/logo.png' class='margin-b-20'>
+        <h2>Vegan Singles<br><span class='lead'>BETA</span></h2>
+        <img src='/assets/img/logo.png' class='margin-b-20' height='100' width='100'>
         <br>
-        <p><%= number_with_delimiter(User.count)%> registered users</p>
+        <p><%= number_with_delimiter(User.count)%> total members</p>
     </a>
     
     <!-- Navigation -->
