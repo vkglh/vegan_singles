@@ -27,6 +27,10 @@ gem 'devise'
 
 gem 'haversine'
 
+gem 'carrierwave'
+
+gem "mini_magick"
+
 gem "tzinfo-data"
 
 # Use ActiveModel has_secure_password

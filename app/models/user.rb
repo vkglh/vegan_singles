@@ -2,14 +2,16 @@ class User < ActiveRecord::Base
 
   require 'haversine'
 
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  mount_uploader :avatar, AvatarUploader
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
   validates_length_of :bio, maximum: 5000
   validate :dob_check
   validate :gender_check
+  validates_integrity_of  :avatar
+  validates_processing_of :avatar
 
   def gender_check
     if self.gender
@@ -45,14 +47,6 @@ class User < ActiveRecord::Base
 
     def compatibility_overall_with(user)
       compatibility_age_with(user) / 1
-    end
-
-    def distance_to(user)
-        city_1 = City.where(name: city)[0]
-        city_2 = City.where(name: user.city)[0]
-        if (city_1.is_a? Numeric) || (city_2.is_a? Numeric)
-        end
-        Haversine.distance(city_1.lat, city_1.lng, city_2.lat, city_2.lng)
     end
 
 end

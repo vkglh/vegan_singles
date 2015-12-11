@@ -1,5 +1,13 @@
 module ProfileHelper
 
+    def avatar_url
+        if @user.avatar.url.present?
+            @user.avatar.url
+        else
+            '/assets/img/avatar-placeholder.png'
+        end
+    end
+
     def show_edit_profile
         if current_user.id == @user.id
             "<p><a href='/profile/edit'>Edit Profile</a></p>".html_safe
@@ -16,19 +24,9 @@ module ProfileHelper
 
     def show_location
         if @user.city != nil
-            ("<i class='fa fa-building-o' style='width: 35px;'></i> "  + @user.city + "<span class='text-muted'> " +  show_distance + "</span>").html_safe
+            ("<i class='fa fa-building-o' style='width: 35px;'></i> "  + @user.city).html_safe
         else
             ''
-        end
-    end
-
-    def show_distance
-        if current_user
-            if current_user.id != @user.id && current_user.city != nil && @user.city != nil
-                '(' + current_user.distance_to(@user).to_miles.round.to_s + ' miles away)'
-            else
-                ''
-            end
         end
     end
 

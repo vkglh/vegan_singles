@@ -10,7 +10,10 @@ before_filter :configure_permitted_parameters
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:account_update) do |u|
-      u.permit(:name, :city, :bio, :date_of_birth, :gender, :looking_for_male, :looking_for_female, :looking_for_genderfluid, :looking_for_nonbinary, :skype, :instagram, :facebook, :twitter)
+      u.permit(:avatar, :avatar_cache, :remove_avatar, 
+        :name, :city, :bio, :date_of_birth, :gender, 
+        :looking_for_male, :looking_for_female, :looking_for_genderfluid, :looking_for_nonbinary, 
+        :skype, :instagram, :facebook, :twitter, )
     end
   end
 

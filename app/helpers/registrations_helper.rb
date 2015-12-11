@@ -1,4 +1,12 @@
 module RegistrationsHelper
+    def avatar_url
+        if current_user.avatar.url.present?
+            current_user.avatar.url
+        else
+            '/assets/img/avatar-placeholder-small.png'
+        end
+    end
+
     def city_names
         city_names = []
         City.all.each do |city|
