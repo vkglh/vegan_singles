@@ -1,5 +1,5 @@
 module RegistrationsHelper
-    def avatar_url
+    def avatar_small
         if current_user.avatar.url.present?
             current_user.avatar.url
         else

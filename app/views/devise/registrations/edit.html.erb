@@ -43,7 +43,7 @@
                       <div class="form-group col-md-4">
                         <center>
                           <%= f.label :avatar %><br />
-                          <img class="margin-b-20" src="<%= avatar_url %>" alt="" height='200' width='200' style='border: 3px rgba(0, 0, 0, 0.2) solid;'/><br>
+                          <img class="margin-b-20" src="<%= avatar_small %>" alt="" height='200' width='200' style='border: 3px rgba(0, 0, 0, 0.2) solid;'/><br>
                           <% if current_user.avatar.url.present? %>
                             <label class='checkbox-inline' style='margin-top: -25px;'><%= f.check_box :remove_avatar, style: 'margin-top: 6px;' %>Remove Avatar</label>
                           <% end %>

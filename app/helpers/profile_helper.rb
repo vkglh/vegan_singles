@@ -1,6 +1,6 @@
 module ProfileHelper
 
-    def avatar_url
+    def avatar_large
         if @user.avatar.url.present?
             @user.avatar.url
         else
