@@ -29,25 +29,20 @@
                     <h3>Basic Info</h3>
                     </center>
 
-                    <div class='row'>
-                      <div class="form-group col-md-4">
-                      </div>
-                      <div class="form-group col-md-4">
-                        
-                      </div>
-                    </div>
-
                      <div class='row'>
                       <div class="form-group col-md-4">
                       </div>
                       <div class="form-group col-md-4">
                         <center>
                           <%= f.label :avatar %><br />
-                          <img class="margin-b-20" src="<%= avatar_small %>" alt="" height='200' width='200' style='border: 3px rgba(0, 0, 0, 0.2) solid;'/><br>
+                          <img class="margin-b-20" src=<%= avatar_small %> alt="" height='200' width='200' style='border: 3px rgba(0, 0, 0, 0.2) solid;'/><br>
                           <% if current_user.avatar.url.present? %>
                             <label class='checkbox-inline' style='margin-top: -25px;'><%= f.check_box :remove_avatar, style: 'margin-top: 6px;' %>Remove Avatar</label>
-                          <% end %>
-                          <%= f.file_field :avatar  %>
+                          <% end %><br>
+                          <div class="form-group">
+                            <%= f.file_field :avatar, style: 'margin-left: 80px;' %>
+                            </center>
+                          </div>
                           <%= f.hidden_field :avatar_cache %>
                         </center>
                       </div>
@@ -58,7 +53,7 @@
                       </div>
                       <div class="form-group col-md-4">
                         <%= f.label :name %><br />
-                        <%= f.text_field :name, class: 'form-control' %>
+                        <%= f.text_field :name, class: 'form-control', size: 50 %>
                       </div>
                     </div>
 
@@ -142,6 +137,54 @@
                     <div class='row'>
                       <div class="form-group col-md-4">
                       </div>
+                      <div class="form-group col-md-2">
+                          <%= f.label 'Gallery Image 1' %><br /><br>
+                          <img class="margin-b-20" src=<%= gallery_img_1_url_small %> alt="" height='250' width='320' style='border: 3px rgba(0, 0, 0, 0.2) solid; margin-top: -20px;'/><br>
+                          <% if current_user.gallery_img_1.url.present? %>
+                            <label class='checkbox-inline' style='margin-top: -25px;'><%= f.check_box :remove_gallery_img_1, style: 'margin-top: 6px;' %>Remove Gallery Image 1</label>
+                          <% end %>
+                          <%= f.file_field :gallery_img_1  %><br>
+                      </div>
+
+                      <div class="form-group col-md-2">
+                          <%= f.label 'Gallery Image 2' %><br /><br>
+                          <img class="margin-b-20" src=<%= gallery_img_2_url_small %> alt="" height='250' width='320' style='border: 3px rgba(0, 0, 0, 0.2) solid; margin-top: -20px;'/><br>
+                          <% if current_user.gallery_img_2.url.present? %>
+                            <label class='checkbox-inline' style='margin-top: -25px;'><%= f.check_box :remove_gallery_img_2, style: 'margin-top: 6px;' %>Remove Gallery Image 2</label>
+                          <% end %>
+                          <%= f.file_field :gallery_img_2  %><br>
+                          <%= f.hidden_field :gallery_img_2_cache %>
+                      </div>
+                    </div>
+
+                    <div class='row'>
+                      <div class="form-group col-md-4">
+                      </div>
+                      <div class="form-group col-md-2">
+                          <%= f.label 'Gallery Image 3', class: 'margin-t-20' %><br /><br>
+                          <img class="margin-b-20" src=<%= gallery_img_3_url_small %> alt="" height='250' width='320' style='border: 3px rgba(0, 0, 0, 0.2) solid; margin-top: -20px;'/><br>
+                          <% if current_user.gallery_img_3.url.present? %>
+                            <label class='checkbox-inline' style='margin-top: -25px;'><%= f.check_box :remove_gallery_img_3, style: 'margin-top: 6px;' %>Remove Gallery Image 3</label>
+                          <% end %>
+                          <%= f.file_field :gallery_img_3  %>
+                          <%= f.hidden_field :gallery_img_3_cache %>
+                      </div>
+
+                      <div class="form-group col-md-2">
+                          <%= f.label 'Gallery Image 4', class: 'margin-t-20' %><br /><br>
+                          <img class="margin-b-20" src=<%= gallery_img_4_url_small %> alt="" height='250' width='320' style='border: 3px rgba(0, 0, 0, 0.2) solid; margin-top: -20px;'/><br>
+                          <% if current_user.gallery_img_4.url.present? %>
+                            <label class='checkbox-inline' style='margin-top: -25px;'><%= f.check_box :remove_gallery_img_4, style: 'margin-top: 6px;' %>Remove Gallery Image 4</label>
+                          <% end %>
+                          <%= f.file_field :gallery_img_4  %>
+                          <%= f.hidden_field :gallery_img_4_cache %>
+                      </div>
+                    </div>
+
+
+                    <div class='row'>
+                      <div class="form-group col-md-4">
+                      </div>
                       <div class="form-group col-md-4">
                         <hr>
                       </div>
@@ -149,6 +192,7 @@
 
                     <center>
                     <h3>Interests</h3>
+                    <b>Coming Soon!</b>
                     </center>
 
                     <div class='row'>

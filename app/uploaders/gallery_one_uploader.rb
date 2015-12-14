@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class AvatarUploader < CarrierWave::Uploader::Base
+class GalleryOneUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::MiniMagick
 
@@ -22,7 +22,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
 
-  process resize_to_fill: [300, 300]
+  process resize_to_fill: [960, 750]
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
@@ -32,7 +32,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
 
   def filename
-    "avatar.jpg" if original_filename
+    "gallery_one.jpg" if original_filename
   end
 
 end

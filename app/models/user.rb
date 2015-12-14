@@ -3,6 +3,10 @@ class User < ActiveRecord::Base
   require 'haversine'
 
   mount_uploader :avatar, AvatarUploader
+  mount_uploader :gallery_img_1, GalleryOneUploader
+  mount_uploader :gallery_img_2, GalleryTwoUploader
+  mount_uploader :gallery_img_3, GalleryThreeUploader
+  mount_uploader :gallery_img_4, GalleryFourUploader
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

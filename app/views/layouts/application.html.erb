@@ -51,6 +51,9 @@
 <!-- CSS Awesomplete -->
 <link rel="stylesheet" href="/assets/css/awesomplete.css" />
 
+<!-- Ekko Lightbox -->
+<link rel ='stylesheet' href='/assets/css/ekko-lightbox.css' />
+
 </head>
 
 <body class="side-navigation">
@@ -119,6 +122,32 @@
 
 <!-- Google Map API -->
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+<!-- Ekko Lightbox -->
+<script src="/assets/js/ekko-lightbox.js"></script>
+
+<!-- Ekko Lightbox delegation -->
+<script>
+    $().ready(function() {
+   $('[data-toggle="lightbox"]').click(function(event) {
+     event.preventDefault();
+     $(this).ekkoLightbox({
+       type: 'image',
+       onContentLoaded: function() {
+         var container = $('.ekko-lightbox-container');
+         var image = container.find('img');
+         var windowHeight = $(window).height();
+         if(image.height() + 200 > windowHeight) {
+           image.css('height', windowHeight - 150);
+           var dialog = container.parents('.modal-dialog');
+           var padding = parseInt(dialog.find('.modal-body').css('padding'));
+           dialog.css('max-width', image.width() + padding * 2 + 2);
+         }
+       }
+     });
+   });
+ });
+</script>
 
 <!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->
 <!--

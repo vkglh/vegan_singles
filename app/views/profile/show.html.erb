@@ -5,7 +5,7 @@
             <div class="row">
                 <center>
                 <div class="col-lg-12 col-md-10">
-                    <img class="margin-b-20" src="<%= avatar_large %>" alt="" height='500' width='500' style='border: 3px rgba(0, 0, 0, 0.2) solid;'/>
+                    <img class="margin-b-20" src="<%= avatar_large %>" alt="" height='300' width='300' style='border: 3px rgba(0, 0, 0, 0.2) solid;'/>
                     <%= show_edit_profile %>
                     <h1 class="margin-b-10"><%= show_name %></h1>
                     <h3><%= show_location %></h3>
@@ -27,61 +27,34 @@
             <!-- Masonry Sizer -->
             <div class="masonry-sizer"></div>
             <!-- Masonry Element -->
-            <div class="masonry-item">
-                <div class="gallery-item">
-                    <div class="item-photo"><a href="projects/project-green.html" data-target="ajax-modal"><img src="/assets/img/gallery-placeholder-top.png" alt="" /></a></div>
-                    <a href="projects/project-green.html" data-target="ajax-modal">
-                        <div class="item-hover dark" style='background-color: rgba(40, 36, 99, 0.6);'>
-                            <div class="item-hover-content">
-                                <h2 class="margin-b-0">Hello!</h2>
-                                <span class="text-muted">Hello I am driving.</span>
-                            </div>
-                        </div>
+            <div class='masonry-item'>
+                <div class='gallery-item'>
+                    <div class='item-photo'><a href=<%= gallery_img_1_url_large %> data-toggle="lightbox"><img src=<%= gallery_img_1_url_large %> alt='' /></a></div>
                     </a>
                 </div>
             </div>
             <!-- Masonry Element -->
-            <div class="masonry-item">
-                <div class="gallery-item">
-                    <div class="item-photo"><a href="projects/project-green.html" data-target="ajax-modal"><img src="/assets/img/gallery-placeholder-top.png" alt="" /></a></div>
-                    <a href="projects/project-green.html" data-target="ajax-modal">
-                        <div class="item-hover dark" style='background-color: rgba(40, 36, 99, 0.6);'>
-                            <div class="item-hover-content">
-                                <h2 class="margin-b-0">Starbucks</h2>
-                                <span class="text-muted">Me at Starbucks</span>
-                            </div>
-                        </div>
+            <div class='masonry-item'>
+                <div class='gallery-item'>
+                    <div class='item-photo'><a href=<%= gallery_img_2_url_large %> data-toggle="lightbox"><img src=<%= gallery_img_2_url_large %> alt='' /></a></div>
                     </a>
                 </div>
             </div>
             <!-- Masonry Element -->
-            <div class="masonry-item">
-                <div class="gallery-item">
-                    <div class="item-photo"><a href="projects/project-green.html" data-target="ajax-modal"><img src="/assets/img/gallery-placeholder-top.png" alt="" /></a></div>
-                    <a href="projects/project-green.html" data-target="ajax-modal">
-                        <div class="item-hover dark" style='background-color: rgba(40, 36, 99, 0.6);'>
-                            <div class="item-hover-content">
-                                <h2 class="margin-b-0">Vacation</h2>
-                                <span class="text-muted">Me in China.</span>
-                            </div>
-                        </div>
+            <div class='masonry-item'>
+                <div class='gallery-item'>
+                    <div class='item-photo'><a href=<%= gallery_img_3_url_large %> data-toggle="lightbox"><img src=<%= gallery_img_3_url_large %> alt='' /></a></div>
                     </a>
                 </div>
             </div>
             <!-- Masonry Element -->
-            <div class="masonry-item">
-                <div class="gallery-item">
-                    <div class="item-photo"><a href="projects/project-green.html" data-target="ajax-modal"><img src="/assets/img/gallery-placeholder-top.png" alt="" /></a></div>
-                    <a href="projects/project-green.html" data-target="ajax-modal">
-                        <div class="item-hover dark" style='background-color: rgba(40, 36, 99, 0.6);'>
-                            <div class="item-hover-content">
-                                <h2 class="margin-b-0">PAX</h2>
-                                <span class="text-muted">PAX event 2015</span>
-                            </div>
-                        </div>
+            <div class='masonry-item'>
+                <div class='gallery-item'>
+                    <div class='item-photo'><a href=<%= gallery_img_4_url_large %> data-toggle="lightbox"><img src=<%= gallery_img_4_url_large %> alt='' /></a></div>
                     </a>
                 </div>
             </div>
+        </div>
 
     </section>
     <!-- Section - Gallery -->
