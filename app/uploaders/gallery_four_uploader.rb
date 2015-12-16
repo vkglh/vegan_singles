@@ -12,8 +12,4 @@ class GalleryFourUploader < CarrierWave::Uploader::Base
      %w(jpg jpeg gif png)
   end
 
-  def filename
-    "gallery_four.jpg" if original_filename
-  end
-
 end
