@@ -4,7 +4,7 @@ class ReportsController < ApplicationController
 
     def admin
         if current_user 
-            if current_user.role != 'Admin'
+            if current_user.role != 'admin'
                 redirect_to '/'
             end
         else

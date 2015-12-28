@@ -23,6 +23,9 @@ Rails.application.routes.draw do
   post '/reports/ban' => 'reports#ban'
   get '/reports/view' => 'reports#view'
 
+  post '/search/query' => 'search#query'
+  get '/search' => 'search#index'
 
+  get '/feed' => 'feed#index'
 
 end
