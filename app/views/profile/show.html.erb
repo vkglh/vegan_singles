@@ -1,3 +1,29 @@
+<style>
+  .dropdown-menu>li>a:hover {
+    background-color: #ca4441;
+  }
+
+#myModalLabel {
+    color: #333;
+    text-align: center;
+  }
+
+  .modal-body p {
+    color: #333;
+    text-align: center;
+  }
+
+  .modal-body textarea {
+    color: #333;
+     display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    height: 100px;
+    padding: 5px;
+  }
+</style>
+
 <!-- Section - Summary -->
     <section id="section01" class="section fullheight bg-blue dark padding-v-100" data-header-change="true" style="background-color:#282463">
 
@@ -6,6 +32,36 @@
                 <center>
                 <div class="col-lg-12 col-md-10">
                     <img class="margin-b-20" src="<%= avatar_large %>" alt="" height='300' width='300' style='border: 3px rgba(0, 0, 0, 0.2) solid;'/>
+                    <%= show_send_message %>
+                    <% if current_user.id != @user.id %>
+                        <div class="dropdown" style='display: inline-block; margin-bottom: 20px; margin-left: 5px;'>
+                          <div class="dropdown-toggle" type="button" data-toggle="dropdown">
+                          <span class="caret"></span></div>
+                          <ul class="dropdown-menu" style='position: absolute; left: 50%; width: 100px; margin-left: -50px;'>
+                            <li><a href="#" data-toggle="modal" data-target="#report_modal">Report User</a></li>
+                            <li><a href="#">Block</a></li>
+                          </ul>
+                        </div>
+                        <div id="report_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                             <div class="modal-dialog">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;  </button>
+                                    <h4 class="modal-title" id="myModalLabel">Report User: <%= @user.name %></h4>
+                                  </div>
+                                  <%= form_tag({controller: "reports", action: "new"}, method: "post") do %>
+                                      <div class="modal-body">
+                                        <p>Reason for report:</p>
+                                        <%= text_area_tag :reason, nil, maxlength: 500 %>
+                                        </div>
+                                      <div class="modal-footer">
+                                         <button class="btn btn-red btn-filled btn-sm" type="submit" name="submit" value="submit">Send Report</button>
+                                      </div>
+                                  <% end %>
+                                </div>
+                              </div>
+                            </div>
+                    <% end %>
                     <%= show_edit_profile %>
                     <h1 class="margin-b-10"><%= show_name %></h1>
                     <h3><%= show_location %></h3>

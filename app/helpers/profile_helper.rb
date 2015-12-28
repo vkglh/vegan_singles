@@ -14,6 +14,12 @@ module ProfileHelper
         end
     end
 
+    def show_send_message
+        if current_user.id != @user.id
+            "<br><a href='#{}'>Send Message</a>".html_safe
+        end
+    end
+
     def show_name
         if @user.name != nil && @user.name != ''
             ('<strong>' + @user.name + '</strong>').html_safe

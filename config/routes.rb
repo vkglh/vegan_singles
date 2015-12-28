@@ -18,5 +18,11 @@ Rails.application.routes.draw do
   get '/profile/edit' => 'profile#edit'
   get '/profile/:id' => 'profile#show'
 
+  post '/report/:id/new' => 'reports#new'
+  post 'reports/ignore' => 'reports#ignore'
+  post '/reports/ban' => 'reports#ban'
+  get '/reports/view' => 'reports#view'
+
+
 
 end

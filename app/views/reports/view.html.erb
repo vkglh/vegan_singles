@@ -1,0 +1,72 @@
+<style>
+    th {
+        padding: 5px 10px;
+    }
+
+    td {
+        padding: 5px 10px;
+    }
+</style>
+
+<center>
+
+<h1>Reports</h1>
+
+<h2>Unreviewed</h2>
+<table class='table-bordered'>
+    <tr>
+        <th>Date</th>
+        <th>id</th>
+        <th>User</ht>
+        <th>Reporter</th>
+        <th>Reason</th>
+        <th>Message</th>
+        <th>Action</th>
+    </tr>
+    <% Report.unreviewed.each do |report| %>
+        <tr>
+            <td><%= report.created_at %></td>
+            <td><%= report.id %></td>
+            <td><%= report.reported_id %></td>
+            <td><%= report.reporter_id %></td>
+            <td><%= report.reason %></td>
+            <td><%= report.reported_message %></td>
+            <td>
+                <a href='#'>Message</a> |
+                <%= form_tag({controller: "reports", action: "ignore"}, method: "post", style: 'display: inline;') do %>
+                    <%= hidden_field_tag(:id, report.id) %>
+                    <a href="#" onclick="$(this).closest('form').submit()">Ignore</a>
+                <% end %>
+                |
+                <%= form_tag({controller: "reports", action: "ban"}, method: "post", style: 'display: inline;') do %>
+                    <%= hidden_field_tag(:id, report.id) %>
+                    <a href="#" onclick="$(this).closest('form').submit()">Ban</a>
+                <% end %>
+            </td>
+        </tr>
+    <% end %>
+</table>
+
+<h2 class='margin-t-50'>Reviewed</h2>
+<table class='table-bordered'>
+    <tr>
+        <th>Date</th>
+        <th>id</th>
+        <th>User</th>
+        <th>Reporter</th>
+        <th>Reason</th>
+        <th>Message</th>
+    </tr>
+    <% Report.reviewed.each do |report| %>
+        <tr>
+            <td><%= report.created_at %></td>
+            <td><%= report.id %></td>
+            <td><%= report.reported_id %></td>
+            <td><%= report.reporter_id %></td>
+            <td><%= report.reason %></td>
+            <td><%= report.reported_message %></td>
+        </tr>
+    <% end %>
+</table>
+
+</center>
