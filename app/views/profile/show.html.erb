@@ -52,6 +52,7 @@
                                   <%= form_tag({controller: "reports", action: "new"}, method: "post") do %>
                                       <div class="modal-body">
                                         <p>Reason for report:</p>
+                                        <%= hidden_field_tag(:reported_message, "<a href='/profile/#{@user.id}'>View Profile</a>") %>
                                         <%= text_area_tag :reason, nil, maxlength: 500 %>
                                         </div>
                                       <div class="modal-footer">

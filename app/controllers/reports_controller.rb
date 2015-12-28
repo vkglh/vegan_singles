@@ -14,12 +14,13 @@ class ReportsController < ApplicationController
 
     def new
         reason = params[:reason]
+        reported_message = params[:reported_message]
         reported_id = params[:id]
         reporter_id = current_user.id
 
         redirect_to "/profile/#{reported_id}"
 
-        Report.create(:reason => reason, :reported_id => reported_id, :reporter_id => reporter_id)
+        Report.create(:reason => reason, :reported_id => reported_id, :reporter_id => reporter_id, :reported_message => reported_message)
     end
 
     def view
@@ -27,14 +28,19 @@ class ReportsController < ApplicationController
 
     def ignore
         id = params[:id]
+        status = params[:status]
+
         report = Report.find(id)
+        report.status = status
         report.reviewed = true
         report.save
+
         redirect_to '/reports/view'
     end
 
     def ban
         id = params[:id]
+        status = params[:status]
         report = Report.find(id)
 
         user_id = report.reported_id
@@ -43,6 +49,7 @@ class ReportsController < ApplicationController
         user.save
 
         report.reviewed = true
+        report.status = status
         report.save
 
         redirect_to '/reports/view'
