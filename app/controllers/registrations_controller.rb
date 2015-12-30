@@ -21,7 +21,7 @@ before_filter :configure_permitted_parameters
         :gallery_img_4, :gallery_img_4_cache, :remove_gallery_img_4,
         :name, :city, :bio, :date_of_birth, :gender, 
         :looking_for_male, :looking_for_female, :looking_for_genderfluid, :looking_for_nonbinary, 
-        :skype, :instagram, :facebook, :twitter, )
+        :skype, :instagram, :facebook, :twitter)
     end
   end
 

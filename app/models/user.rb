@@ -13,9 +13,17 @@ class User < ActiveRecord::Base
 
   validates_length_of :bio, maximum: 5000
   validate :dob_check
+  validate :city_check
   validate :gender_check
   validates_integrity_of  :avatar
   validates_processing_of :avatar
+
+  def city_check
+    if self.city
+       errors.add(:city, '- Please choose a city from the dropdown.') if (City.where(:name => self.city)[0] == nil)
+    end
+  end
+
 
   def gender_check
     if self.gender
@@ -32,25 +40,6 @@ class User < ActiveRecord::Base
     def age
         now = Time.now.utc.to_date
         now.year - date_of_birth.year - ((now.month > date_of_birth.month || (now.month == date_of_birth.month && now.day >= date_of_birth.day)) ? 0 : 1)
-    end
-
-    def ban
-        role = 'banned'
-        save
-    end
-
-    def compatibility_age_with(user)
-      age_range = (user.age - age).abs
-      score = 100 - age_range * 5 
-      if score >= 0 then score else 0 end
-    end
-
-    def compatibility_interests_with(user)
-      100
-    end
-
-    def compatibility_overall_with(user)
-      compatibility_age_with(user) / 1
     end
 
 end
