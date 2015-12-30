@@ -12,4 +12,8 @@ class SearchController < ApplicationController
         
     end
 
+    def results
+         @name = params[:name]
+    end
+
 end

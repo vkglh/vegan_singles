@@ -48,7 +48,7 @@
                         <%= form_tag({controller: "reports", action: "ban"}, method: "post", style: 'display: inline;') do %>
                             <%= hidden_field_tag(:id, report.id) %>
                             <%= hidden_field_tag(:status, 'banned') %>
-                            <a href="#" onclick="$(this).closest('form').submit()">Ban</a>
+                            <a href="#" onclick="$(this).closest('form').submit(); return confirm('Are you sure you want to ban this user? Click OK to confirm.')">Ban</a>
                         <% end %>
                     </td>
                 </tr>
