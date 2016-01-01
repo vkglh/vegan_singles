@@ -4,7 +4,7 @@ class ReportsController < ApplicationController
 
     def admin
         if current_user 
-            if current_user.role != 'admin'
+            if current_user.role != 'Admin'
                 redirect_to '/'
             end
         else
@@ -45,7 +45,7 @@ class ReportsController < ApplicationController
 
         user_id = report.reported_id
         user = User.find(user_id)
-        user.role = 'banned'
+        user.role = 'Banned'
         user.save
 
         report.reviewed = true

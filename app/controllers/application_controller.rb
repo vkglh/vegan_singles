@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   before_filter :banned
 
     def banned
-        if current_user && current_user.role == 'banned'
+        if current_user && current_user.role == 'Banned'
             redirect_to '/banned'
         end
     end

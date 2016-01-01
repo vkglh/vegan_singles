@@ -1,1 +1,42 @@
-<h1><%= @name %></h1>
+
+
+<section class="section fullheight dark padding-v-100" data-header-change="true" style='background-color:#183159'>
+        
+        <div class="section-content v-center">
+            <div class="border-bottom margin-b-80">
+                <div class="container container-wide">
+                    <h1 class="text-center"><i class="fa fa-search" style='margin-right: 10px;'> </i>Results</h1>
+                </div>
+            </div> 
+
+                        <div class="container">
+
+                      <div class= 'row'>
+                        <div class="col-md-3">
+                        </div>
+                        <div class="col-md-6">
+                            <center>
+                                <h3>Your search returned <%= @results.size %> results.</h3>
+                                <% @results.each do |result| %>
+                                    <img src='<%= result.avatar.url %>'>
+                                    <p><%= result.name %></p>
+                                <% end %>
+                            </center>
+                        </div>
+                      </div>
+
+
+                      </div>
+
+
+
+
+
+            </div>
+
+
+        </div>
+
+</section>
+
+

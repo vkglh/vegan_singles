@@ -1,7 +1,7 @@
 module SearchHelper
     def show_looking_for
         genders = []
-         if (current_user.looking_for_male == false || current_user.looking_for_male == nil ) && (current_user.looking_for_female == false || @user.looking_for_female == nil ) && (@user.looking_for_genderfluid == false || @user.looking_for_genderfluid == nil ) && (@user.looking_for_nonbinary == false || @user.looking_for_nonbinary == nil )
+         if (current_user.looking_for_male == nil || current_user.looking_for_male == false ) && (current_user.looking_for_female == nil || current_user.looking_for_female == false ) && (current_user.looking_for_genderfluid == nil || current_user.looking_for_genderfluid == false ) && (current_user.looking_for_nonbinary == nil || current_user.looking_for_nonbinary == false )
             '?'
         else
             if current_user.looking_for_male == true

@@ -18,10 +18,9 @@
                           <center>
                           <p>You are currently looking for: <b><%= show_looking_for %></b> <br><a href='/profile/edit' class='text-muted'>Edit Profile</a></p> 
                         </center>
+                        <%= hidden_field_tag(:searcher_gender, current_user.gender) %>
                           <label>Age Range</label><br />
-                          <%= text_field_tag :name, nil, class: 'form-control' %>
                           <label>Distance</label><br />
-                          <%= text_field_tag :name, nil, class: 'form-control' %>
                         </div>
                       </div>
 

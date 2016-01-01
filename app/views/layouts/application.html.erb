@@ -78,11 +78,11 @@
     <nav id="main-menu">
         <ul class="nav nav-main-vertical">
             <% if current_user %>
-                <% if current_user.role == 'banned' %>
+                <% if current_user.role == 'Banned' %>
                     <%= render 'layouts/header_banned' %>
-                <% elsif current_user.role == 'nonmember' %>
+                <% elsif current_user.role == 'Nonmember' %>
                     <%= render 'layouts/header_nonmember' %>
-                <% elsif current_user.role == 'admin' %>
+                <% elsif current_user.role == 'Admin' %>
                     <%= render 'layouts/header_admin' %>
                 <% else %>
                     <%= render 'layouts/header_member' %>

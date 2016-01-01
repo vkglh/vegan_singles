@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 
             def index
                 if current_user
-                    if current_user.role == 'nonmember'
+                    if current_user.role == 'Nonmember'
                         redirect_to '/'
                     else
                         redirect_to '/feed'

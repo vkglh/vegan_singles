@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get '/reports/view' => 'reports#view'
 
   post '/search/results' => 'search#results'
+  get '/search/results' => 'search#index'
   get '/search' => 'search#index'
 
   get '/feed' => 'feed#index'

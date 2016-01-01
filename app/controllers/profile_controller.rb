@@ -3,7 +3,7 @@ class ProfileController < ApplicationController
     before_filter :nonmember
 
     def nonmember
-        if current_user == nil || current_user.role == 'nonmember'
+        if current_user == nil || current_user.role == 'Nonmember'
             render 'nonmember'
         end
     end
@@ -16,7 +16,7 @@ class ProfileController < ApplicationController
         id = params[:id]
         @user = User.find(id)
 
-        if @user.role == 'banned' || @user.role == 'nonmember'
+        if @user.role == 'Banned' || @user.role == 'Nonmember'
             render 'inactive'
         end
 

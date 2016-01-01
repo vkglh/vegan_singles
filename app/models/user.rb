@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
 
-  require 'haversine'
+  scope :male, -> { where(gender: 'Male')  }
+  scope :female, -> { where(gender: 'Female')  }
+  scope :genderfluid, -> { where(gender: 'Genderfluid')  }
+  scope :nonbinary, -> { where(gender: 'Non-binary')  }
 
   mount_uploader :avatar, AvatarUploader
   mount_uploader :gallery_img_1, GalleryOneUploader
@@ -19,7 +22,7 @@ class User < ActiveRecord::Base
   validates_processing_of :avatar
 
   def city_check
-    if self.city
+    if self.city != nil && self.city != ''
        errors.add(:city, '- Please choose a city from the dropdown.') if (City.where(:name => self.city)[0] == nil)
     end
   end
