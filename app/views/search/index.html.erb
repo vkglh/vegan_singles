@@ -19,10 +19,6 @@
                           <p>You are currently looking for: <b><%= show_looking_for %></b> <br><a href='/profile/edit' class='text-muted'>Edit Profile</a></p> 
                         </center>
                         <%= hidden_field_tag(:searcher_gender, current_user.gender) %>
-                        <%= hidden_field_tag(:looking_for_male, current_user.looking_for_male) %>
-                        <%= hidden_field_tag(:looking_for_female, current_user.looking_for_female) %>
-                        <%= hidden_field_tag(:looking_for_genderfluid, current_user.looking_for_genderfluid) %>
-                        <%= hidden_field_tag(:looking_for_nonbinary, current_user.looking_for_nonbinary) %>
                           <label>Age Range</label><br />
                           <label>Distance</label><br />
                         </div>
