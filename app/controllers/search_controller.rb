@@ -21,25 +21,25 @@ class SearchController < ApplicationController
         looking_for_nonbinary = params[:looking_for_nonbinary]
         @gender_matches = []
 
-        if looking_for_male
+        if looking_for_male == true
             User.male.each do |user|
                 @gender_matches.push(user)
             end
         end
 
-        if looking_for_female
+        if looking_for_female == true
             User.female.each do |user|
                 @gender_matches.push(user)
             end
         end
 
-        if looking_for_genderfluid
+        if looking_for_genderfluid == true
             User.genderfluid.each do |user|
                 @gender_matches.push(user)
             end
         end
 
-        if looking_for_nonbinary
+        if looking_for_nonbinary == true
             User.nonbinary.each do |user|
                 @gender_matches.push(user)
             end
