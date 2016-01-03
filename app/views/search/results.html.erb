@@ -24,9 +24,15 @@
                       <% @results.in_groups_of(4) do |result_1, result_2, result_3, result_4| %>
                           <div class="row">
                             <div class="col-md-3"><img src='<%= result_1.avatar.url %>'></div>
-                            <div class="col-md-3"><img src='<%= result_2.avatar.url %>'></div>
-                            <div class="col-md-3"><img src='<%= result_3.avatar.url %>'></div>
-                            <div class="col-md-3"><img src='<%= result_4.avatar.url %>'></div>
+                            <% if result_2 %>
+                                <div class="col-md-3"><img src='<%= result_2.avatar.url %>'></div>
+                            <% end %>
+                            <% if result_3 %>
+                                <div class="col-md-3"><img src='<%= result_3.avatar.url %>'></div>
+                            <% end %>
+                            <% if result_4 %>
+                                <div class="col-md-3"><img src='<%= result_4.avatar.url %>'></div>
+                            <% end %>
                           </div>
                     <% end %>
 
