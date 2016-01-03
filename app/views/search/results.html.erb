@@ -32,20 +32,26 @@
                             </div>
                             <% if result_2 %>
                                 <div class="col-md-3">
-                                    <img src='<%= result_2.avatar.url %>' class='img-rounded'>
-                                    <p><%= result_2.name %></p>
+                                    <a href='/profile/<%= result_2.id %>'>
+                                        <img src='<%= result_2.avatar.url %>' class='img-rounded'>
+                                        <p><%= result_2.name %></p>
+                                    </a>
                                 </div>
                             <% end %>
                             <% if result_3 %>
                                 <div class="col-md-3">
-                                    <img src='<%= result_3.avatar.url %>' class='img-rounded'>
-                                    <p><%= result_3.name %></p>
+                                    <a href='/profile/<%= result_3.id %>'>
+                                        <img src='<%= result_3.avatar.url %>' class='img-rounded'>
+                                        <p><%= result_3.name %></p>
+                                    </a>
                                 </div>
                             <% end %>
                             <% if result_4 %>
                                 <div class="col-md-3">
-                                    <img src='<%= result_4.avatar.url %>' class='img-rounded'>
-                                    <p><%= result_4.name %></p>
+                                    <a href='/profile/<%= result_4.id %>'>
+                                        <img src='<%= result_4.avatar.url %>' class='img-rounded'>
+                                        <p><%= result_4.name %></p>
+                                    </a>
                                 </div>
                             <% end %>
                           </div>
