@@ -17,13 +17,19 @@
                         <div class="col-md-6">
                             <center>
                                 <h3>Your search returned <%= @results.size %> results.</h3>
-                                <% @results.each do |result| %>
-                                    <img src='<%= result.avatar.url %>'>
-                                    <p><%= result.name %></p>
-                                <% end %>
                             </center>
                         </div>
                       </div>
+
+                      <% @results.in_groups_of(4) do |result_1, result_2, result_3, result_4| %>
+                          <div class="row">
+                            <div class="col-md-3"><img src='<%= result_1.avatar.url %>'></div>
+                            <div class="col-md-3"><img src='<%= result_2.avatar.url %>'></div>
+                            <div class="col-md-3"><img src='<%= result_3.avatar.url %>'></div>
+                            <div class="col-md-3"><img src='<%= result_4.avatar.url %>'></div>
+                          </div>
+                    <% end %>
+
 
 
                       </div>
