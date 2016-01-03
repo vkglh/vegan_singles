@@ -15,7 +15,7 @@ class SearchController < ApplicationController
     def results
         # Find gender matches
         searcher_gender = params[:searcher_gender]
-        looking_for_male = params[:looking_for_male]
+        looking_for_male = true
         looking_for_female = params[:looking_for_female]
         looking_for_genderfluid = params[:looking_for_genderfluid]
         looking_for_nonbinary = params[:looking_for_nonbinary]
