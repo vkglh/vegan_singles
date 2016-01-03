@@ -22,18 +22,32 @@
                       </div>
 
                       <% @results.in_groups_of(4) do |result_1, result_2, result_3, result_4| %>
+                          <center>
                           <div class="row">
-                            <div class="col-md-3"><img src='<%= result_1.avatar.url %>'></div>
+                            <div class="col-md-3">
+                                <img src='<%= result_1.avatar.url %>' class='img-rounded'>
+                                <p><%= result_1.name %></p>
+                            </div>
                             <% if result_2 %>
-                                <div class="col-md-3"><img src='<%= result_2.avatar.url %>'></div>
+                                <div class="col-md-3">
+                                    <img src='<%= result_2.avatar.url %>' class='img-rounded'>
+                                    <p><%= result_2.name %></p>
+                                </div>
                             <% end %>
                             <% if result_3 %>
-                                <div class="col-md-3"><img src='<%= result_3.avatar.url %>'></div>
+                                <div class="col-md-3">
+                                    <img src='<%= result_3.avatar.url %>' class='img-rounded'>
+                                    <p><%= result_3.name %></p>
+                                </div>
                             <% end %>
                             <% if result_4 %>
-                                <div class="col-md-3"><img src='<%= result_4.avatar.url %>'></div>
+                                <div class="col-md-3">
+                                    <img src='<%= result_4.avatar.url %>' class='img-rounded'>
+                                    <p><%= result_4.name %></p>
+                                </div>
                             <% end %>
                           </div>
+                      </center>
                     <% end %>
 
 
