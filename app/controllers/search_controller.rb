@@ -15,22 +15,34 @@ class SearchController < ApplicationController
     def results
         # Find gender matches
         searcher_gender = params[:searcher_gender]
+        looking_for_male = params[:looking_for_male]
+        looking_for_female = params[:looking_for_female]
+        looking_for_genderfluid = params[:looking_for_genderfluid]
+        looking_for_nonbinary = params[:looking_for_nonbinary]
         @gender_matches = []
 
-        User.male.each do |user|
-            @gender_matches.push(user)
+        if looking_for_male
+            User.male.each do |user|
+                @gender_matches.push(user)
+            end
         end
 
-        User.female.each do |user|
-            @gender_matches.push(user)
+        if looking_for_female
+            User.female.each do |user|
+                @gender_matches.push(user)
+            end
         end
 
-        User.genderfluid.each do |user|
-            @gender_matches.push(user)
+        if looking_for_genderfluid
+            User.genderfluid.each do |user|
+                @gender_matches.push(user)
+            end
         end
 
-        User.nonbinary.each do |user|
-            @gender_matches.push(user)
+        if looking_for_nonbinary
+            User.nonbinary.each do |user|
+                @gender_matches.push(user)
+            end
         end
 
         #Filter banned/nonmembers
